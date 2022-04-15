@@ -7,6 +7,7 @@ public class AddressBookMain {
         AddressBook addressBook = new AddressBook();
 
         System.out.println("1.Add Contact");
+        System.out.println("2. Edit Contact");
         int operation = scanner.nextInt();
         while (operation != 0) {
             switch (operation) {
@@ -20,9 +21,12 @@ public class AddressBookMain {
                         System.out.println(AddressBook.contacts.get(i));
                     }
                     break;
-                           }
-            System.out.println("1.Add Contact");
-            operation = scanner.nextInt();
+                case 2:
+                    System.out.println("enter the first name you want to edit");
+                    String firstName = scanner.next();
+                    addressBook.editContact(firstName);
+                    break;
+            }
         }
     }
 }

@@ -33,5 +33,48 @@ public class AddressBook {
 
         contacts.add(contact);
     }
+
+    public void editContact(String firstName) {
+        for (int i = 0; i < contacts.size(); i++) {
+            PersonDetails contact = (PersonDetails) contacts.get(i);
+            if (contact.getFirstName().equalsIgnoreCase(firstName)) {
+                System.out.println("What data you want to edit?");
+                System.out.println("1.First name/2.Last name/3.Address/4.City/5.Zip/6.PhoneNumber/7.Email");
+                System.out.println("Press the number you want to edit");
+                switch (scanner.nextInt()) {
+                    case 1:
+                        System.out.println("enter the First Name you want to edit");
+                        contact.setFirstName(scanner.next());
+                        break;
+                    case 2:
+                        System.out.println("enter the Last Name you want to edit");
+                        contact.setLastName(scanner.next());
+                        break;
+                    case 3:
+                        System.out.println("enter the Address you want to edit");
+                        contact.setAddress(scanner.next());
+                        break;
+                    case 4:
+                        System.out.println("enter the City you want to edit");
+                        contact.setCity(scanner.next());
+                        break;
+                    case 5:
+                        System.out.println("enter the Zip you want to edit");
+                        contact.setZip(scanner.nextInt());
+                        break;
+                    case 6:
+                        System.out.println("enter the Phone Number you want to edit");
+                        contact.setPhoneNumber(scanner.nextLong());
+                        break;
+                    case 7:
+                        System.out.println("enter the Email you want to edit");
+                        contact.setEmail(scanner.next());
+                        break;
+                }
+            }
+        }
+        System.out.println(AddressBook.contacts);
+    }
 }
+
 
