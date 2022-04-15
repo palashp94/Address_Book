@@ -75,6 +75,16 @@ public class AddressBook {
         }
         System.out.println(AddressBook.contacts);
     }
+    public void deleteContact(String firstName) {
+        for (PersonDetails contact : contacts) {
+            if (contact.getFirstName().equals(firstName)) {
+                contacts.remove(contact);
+            }
+            System.out.println(AddressBook.contacts);
+            break;
+        }
+    }
 }
+
 
 

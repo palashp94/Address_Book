@@ -8,6 +8,7 @@ public class AddressBookMain {
 
         System.out.println("1.Add Contact");
         System.out.println("2. Edit Contact");
+        System.out.println("3.Delete Contact");
         int operation = scanner.nextInt();
         while (operation != 0) {
             switch (operation) {
@@ -26,6 +27,10 @@ public class AddressBookMain {
                     String firstName = scanner.next();
                     addressBook.editContact(firstName);
                     break;
+                case 3:
+                    System.out.println("enter the first name you want to delete");
+                    String FirstName = scanner.next();
+                    addressBook.deleteContact(FirstName);
             }
         }
     }
